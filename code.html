@@ -1,0 +1,62 @@
+package create account;
+import org.openqa.selenium.By;		
+import org.openqa.selenium.WebDriver;		
+import org.openqa.selenium.chrome.ChromeDriver;
+import dropdown.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;  
+public class create account {
+	  public static void main(String[] args) {									
+  		
+	    	// declaration and instantiation of objects/variables		
+	        System.setProperty("webdriver.chrome.driver","C:\\selenium driver\\chromedriver.exe");					
+	        WebDriver driver = new ChromeDriver();					
+
+	        String baseUrl = "http://automationpractice.com/";					
+	        driver.get(baseUrl);
+	      //on sign in
+	        driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")).click();
+            driver.findElement(By.id("email_create")).sendKeys("knmiet2anuj@gmail.com");							
+    							
+            driver.findElement(By.id("SubmitCreate")).submit();					
+           
+           driver.findElement(By.id("uniform-id_gender1")).click();
+          //fill the form
+           driver.findElement(By.xpath("//*[@id=\"customer_firstname\"]")).sendkeys("anuj");
+           driver.findElement(By.xpath("//*[@id=\"customer_lastname\"]")).sendkeys("Gupta");
+	       driver.findElement(By.id("email")).sendkeys("knmiet2anuj@gmail.com");
+	       driver.findElement(By.id("passwd")).sendkeys("knmiet2anuj@gmail.com");
+          
+	       //fill date of birth
+           driver.findElement(By.id("days")).sendKeys("20");
+           driver.findElement(By.id("months")).sendKeys("october");
+           driver.findElement(By.id("years")).sendKeys("1986");
+           driver.findElement(By.id("newsletter")).click();
+         
+        // fill the form
+           driver.findElement(By.id("firstname")).sendkeys("anuj");
+           driver.findElement(By.id("lastname")).sendkeys("gupta");
+           driver.findElement(By.id("company")).sendkeys("velosis");
+           driver.findElement(By.id("address1")).sendkeys("225 nccoffice");
+           driver.findElement(By.id("city")).sendkeys("lucknow");
+          
+           Select year = new Select(driver.findElement(By.id("id_state")));
+           year.selectByVisibleText("Delhi");
+           driver.findElement(BY.id("postcode")); 
+           Select year = new Select(driver.findElement(By.id("id_country")));
+           year.selectByVisibleText("india");
+          
+           //fill the form
+           driver.findElement(By.id("other")).sendkeys("vvsjhqgsdkkjd");
+           driver.findElement(By.id("phone")).sendkeys("7355994500");
+           driver.findElement(By.id("//*[@id=\"submitAccount\"]/span")).click();
+         
+           
+           
+          // verify welcome
+           Assert.assertEquals("Welcome to your account. Here you can manage all of your personal information and orders.",driver.findElement(By.id("page-heading")).getText());
+           System.out.println(driver.findElement(By.id("page-heading")).getText());  
+           
+           
+	}
+	   
+}
