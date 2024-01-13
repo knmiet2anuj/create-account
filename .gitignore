@@ -1,0 +1,15 @@
+**/*.log
+*.orig
+**/*.orig
+.classpath
+.project
+.iml
+.settings/
+.idea/
+target/
+allure-results/
+**/.DS_Store
+**/final*/**/*.feature
+**/report.properties
+/tmp/
+/.run/
