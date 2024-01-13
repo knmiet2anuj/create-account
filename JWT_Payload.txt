@@ -1,0 +1,27 @@
+{
+	"header": {
+		"alg": "PS256",
+		"typ": "JWT",
+		"kid": "$-{kid}"
+	},
+	"payload": {
+		"iss": "$-{client_id}",
+		"aud": "$-{auth_url}",
+		"response_type": "code id_token",
+		"client_id": "$-{client_id}",
+		"redirect_uri": "https://google.com",
+		"scope": "openid $-{scope}",
+		"state": "af0ifjsldkj",
+		"nonce": "n-0S6_WzA2Mj",
+		"exp": 1708608499,
+		"max_age": 21600,
+		"claims": {
+			"id_token": {
+				"openbanking_intent_id": {
+					"value": "$-{consent_id}",
+					"essential ": true
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+{
+	"header": {
+		"b64": false,
+		"http://openbanking.org.uk/iat": 1632387810,
+		"crit": [
+			"b64",
+			"http://openbanking.org.uk/iat",
+			"http://openbanking.org.uk/iss",
+			"http://openbanking.org.uk/tan"
+		],
+		"kid": "65Zw6tUOAuz4Cq9KA1rrqXwUK7A",
+		"cty": "application/json",
+		"typ": "JOSE",
+		"http://openbanking.org.uk/iss": "CN=0015800000jfQ9aAAE, OID.2.5.4.97=PSDGB-FCA-512956, O=Bank of Ireland (UK) Plc, C=GB",
+		"alg": "PS256",
+		"http://openbanking.org.uk/tan": "openbanking.org.uk"
+	},
+	"payload": {
+		"Data": {
+			"ConsentId": "FSPID_202109231217360043781",
+			"Initiation": {
+				"InstructionIdentification": "ABDDCF",
+				"EndToEndIdentification": "DEMOUSER",
+				"InstructedAmount": {
+					"Amount": "12.0",
+					"Currency": "GBP"
+				},
+				"CreditorAccount": {
+					"SchemeName": "UK.OBIE.SortCodeAccountNumber",
+					"Identification": "92050112345678",
+					"Name": "BillingTo",
+					"SecondaryIdentification": "B2"
+				},
+				"RemittanceInformation": {
+					"Unstructured": "123",
+					"Reference": "FRESCO-101"
+				}
+			}
+		},
+		"Risk": {
+			"DeliveryAddress": {
+				"TownName": "Sparsholt",
+				"Country": "GB"
+			}
+		}
+	}
+}
